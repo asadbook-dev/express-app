@@ -1,0 +1,33 @@
+<h2 class='mb-3'>Add new contact</h2>
+
+<form action='/contact/add' method='post'>
+	<div class='form-floating mb-3'>
+		<input type='text' class='form-control' id='name' placeholder='asadbook' required name='name' />
+		<label for='name'>Name</label>
+	</div>
+
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='email'
+			placeholder='name@example.com'
+			required
+			name='email'
+		/>
+		<label for='email'>Email</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='mobile'
+			placeholder='+998998887766m'
+			required
+			name='mobile'
+		/>
+		<label for='mobile'>Mobile phone</label>
+	</div>
+	<a href='/' class='btn btn-secondary'>Back</a>
+	<button type='submit' class='btn btn-success'>Submit</button>
+</form>

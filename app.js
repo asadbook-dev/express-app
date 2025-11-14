@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', (req, res) => {
 	const contacts = getContacts();
-	res.render('home');
+	res.render('home', { title: 'Home page' });
 });
-app.use('/contacts', require('./routes/contact.route'));
+app.use('/contact', require('./routes/contact.route'));
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
