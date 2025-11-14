@@ -14,13 +14,17 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 // Middleware
-app.use(express.json());
+app.use(express.json()); // json parse qilib beradi
+app.use(express.urlencoded({ extended: true })); // form data ni ishlataolishimizga imkon beradi
+// extended
+// false - oddiy formatda datalarni qabul qiladi key=value
+// true - nested object (user[name] = ALI)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
 	const contacts = getContacts();
-	res.render('home', { title: 'Home page' });
+	res.render('home', { title: 'Home page', contacts });
 });
 app.use('/contact', require('./routes/contact.route'));
 

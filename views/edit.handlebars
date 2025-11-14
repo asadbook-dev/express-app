@@ -1,8 +1,16 @@
 <h2 class='mb-3'>Edit contact</h2>
 
-<form action='/contact/edit/123' method='post'>
+<form action='/contact/edit/{{contact.id}}' method='post'>
 	<div class='form-floating mb-3'>
-		<input type='text' class='form-control' id='name' placeholder='asadbook' required name='name' />
+		<input
+			type='text'
+			class='form-control'
+			id='name'
+			placeholder='asadbook'
+			required
+			name='name'
+			value='{{contact.name}}'
+		/>
 		<label for='name'>Name</label>
 	</div>
 
@@ -14,6 +22,7 @@
 			placeholder='name@example.com'
 			required
 			name='email'
+			value='{{contact.email}}'
 		/>
 		<label for='email'>Email</label>
 	</div>
@@ -25,6 +34,7 @@
 			placeholder='+998998887766m'
 			required
 			name='mobile'
+			value='{{contact.mobile}}'
 		/>
 		<label for='mobile'>Mobile phone</label>
 	</div>
