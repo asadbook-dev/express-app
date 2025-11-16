@@ -4,6 +4,7 @@ const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
 const { getContacts } = require('./helpers/utils');
+const db = require('./helpers/db');
 
 const app = express();
 const PORT = process.env.PORT;
