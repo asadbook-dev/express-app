@@ -24,8 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
-	const contacts = getContacts();
-	res.render('home', { title: 'Home page', contacts });
+	const userQuery = 'SELECT * FROM users';
+	db.query(userQuery, (err, results) => {
+		if (err) return res.status(500).json({ error: err.message });
+		res.render('home', { title: 'Home page', contacts: results });
+	});
+	// const contacts = getContacts();
+	// res.render('home', { title: 'Home page', contacts });
 });
 app.use('/contact', require('./routes/contact.route'));
 
